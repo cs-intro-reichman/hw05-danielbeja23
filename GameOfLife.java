@@ -130,10 +130,14 @@ public class GameOfLife {
 	public static void print(int[][] arr) {
 		for (int i = 1; i < arr.length; i++) {
 			for (int j = 1; j < arr[0].length; j++) {
+				if (j == 1) {
+					System.out.print("  " + arr[i][j] + "  ");
+
+				}
 				if ((j == arr[0].length - 1)) {
 					System.out.println(arr[i][j]);
 				} else {
-					System.out.printf(arr[i][j] + "  ");
+					System.out.print(arr[i][j] + "  ");
 
 				}
 
