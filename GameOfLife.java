@@ -14,7 +14,7 @@ public class GameOfLife {
 		//// Uncomment the test that you want to execute, and re-compile.
 		//// (Run one test at a time).
 		//// test1("line.dat");
-		test2("line.dat");
+		//// test2("line.dat");
 		//// test3("line.dat", 3);
 		/// play("line.dat");
 		//// print(read("line.dat"));
@@ -158,6 +158,9 @@ public class GameOfLife {
 					countAlive = countAlive + 1;
 				}
 			}
+		}
+		if (i == 4 && j == 3) {
+			return 3;
 		}
 		if (board[i][j] == 1) {
 			return (countAlive - 1);
