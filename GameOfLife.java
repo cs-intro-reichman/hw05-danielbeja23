@@ -133,7 +133,7 @@ public class GameOfLife {
 				if ((j == arr[0].length - 1)) {
 					System.out.println(arr[i][j]);
 				} else {
-					System.out.print(arr[i][j] + " ");
+					System.out.printf(arr[i][j] + "  ");
 
 				}
 
