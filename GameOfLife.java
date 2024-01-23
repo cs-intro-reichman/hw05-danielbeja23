@@ -15,8 +15,8 @@ public class GameOfLife {
 		//// (Run one test at a time).
 		//// test1("line.dat");
 		//// test2("square.dat");
-		//// test3(fileName, 3);
-		//// play(fileName);
+		//// test3("line.dat", 3);
+		play("square.dat");
 		//// print(read("square.dat"));
 
 	}
@@ -38,6 +38,11 @@ public class GameOfLife {
 			}
 		}
 		print(newBoard);
+		for (int i = 1; i < board.length - 1; i++) {
+			for (int j = 1; j < board[0].length - 1; j++) {
+				System.out.println(count(board, i, j));
+			}
+		}
 
 	}
 
@@ -102,8 +107,13 @@ public class GameOfLife {
 	// Uses the cellValue(board,i,j) function to compute the value of each
 	// cell in the new board. Returns the new board.
 	public static int[][] evolve(int[][] board) {
-		//// Replace the following statement with your code.
-		return null;
+		int[][] newBoard = new int[board.length][board[0].length];
+		for (int i = 1; i < board.length - 1; i++) {
+			for (int j = 1; j < board[0].length - 1; j++) {
+				newBoard[i][j] = cellValue(board, i, j);
+			}
+		}
+		return newBoard;
 	}
 
 	// Returns the value that cell (i,j) should have in the next generation.
@@ -121,7 +131,7 @@ public class GameOfLife {
 		int countAlive = count(board, i, j);
 		if (board[i][j] == 1 && countAlive <= 1) {
 			return 0;
-		} else if (board[i][j] == 1 && (countAlive == 2 || countAlive == 2)) {
+		} else if (board[i][j] == 1 && (countAlive == 2 || countAlive == 3)) {
 			return 1;
 		} else if (board[i][j] == 1 && countAlive > 3) {
 			return 0;
