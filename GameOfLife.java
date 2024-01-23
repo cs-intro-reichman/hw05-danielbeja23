@@ -14,7 +14,7 @@ public class GameOfLife {
 		//// Uncomment the test that you want to execute, and re-compile.
 		//// (Run one test at a time).
 		//// test1("line.dat");
-		test2("line.dat");
+		//// test2("square.dat");
 		//// test3(fileName, 3);
 		//// play(fileName);
 		//// print(read("square.dat"));
