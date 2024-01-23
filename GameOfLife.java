@@ -13,12 +13,12 @@ public class GameOfLife {
 		//// String fileName = args[0];
 		//// Uncomment the test that you want to execute, and re-compile.
 		//// (Run one test at a time).
-		//// test1(fileName);
+		test1("square.dat");
 		//// test2(fileName);
 		//// test3(fileName, 3);
 		//// play(fileName);
 		//// print(read("square.dat"));
-		print(read("square.dat"));
+
 	}
 
 	// Reads the data file and prints the initial board.
