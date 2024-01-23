@@ -159,9 +159,6 @@ public class GameOfLife {
 				}
 			}
 		}
-		if (i == 4 && j == 3) {
-			return 3;
-		}
 		if (board[i][j] == 1) {
 			return (countAlive - 1);
 		}
