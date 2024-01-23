@@ -159,7 +159,7 @@ public class GameOfLife {
 			}
 		}
 		if (board[i][j] == 1) {
-			return countAlive - 1;
+			return (countAlive - 1);
 		}
 		return countAlive;
 	}
