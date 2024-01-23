@@ -14,10 +14,10 @@ public class GameOfLife {
 		//// Uncomment the test that you want to execute, and re-compile.
 		//// (Run one test at a time).
 		//// test1("line.dat");
-		test2("square.dat");
+		test2("line.dat");
 		//// test3("line.dat", 3);
-		/// play("square.dat");
-		//// print(read("square.dat"));
+		/// play("line.dat");
+		//// print(read("line.dat"));
 
 	}
 
