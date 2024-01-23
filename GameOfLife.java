@@ -13,7 +13,7 @@ public class GameOfLife {
 		//// String fileName = args[0];
 		//// Uncomment the test that you want to execute, and re-compile.
 		//// (Run one test at a time).
-		//// test1("line.dat");
+		test1("line.dat");
 		//// test2("line.dat");
 		//// test3("line.dat", 3);
 		/// play("line.dat");
@@ -172,7 +172,7 @@ public class GameOfLife {
 				if (j == 1) {
 					System.out.print("  " + arr[i][j] + "  ");
 
-				} else if ((j == arr[0].length - 1)) {
+				} else if ((j == arr[0].length - 2)) {
 					System.out.println(arr[i][j]);
 				} else {
 					System.out.print(arr[i][j] + "  ");
