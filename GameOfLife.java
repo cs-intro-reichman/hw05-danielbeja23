@@ -13,8 +13,8 @@ public class GameOfLife {
 		//// String fileName = args[0];
 		//// Uncomment the test that you want to execute, and re-compile.
 		//// (Run one test at a time).
-		test1("square.dat");
-		//// test2(fileName);
+		//// test1("line.dat");
+		test2("line.dat");
 		//// test3(fileName, 3);
 		//// play(fileName);
 		//// print(read("square.dat"));
@@ -31,8 +31,14 @@ public class GameOfLife {
 	// the count and cellValue functions.
 	private static void test2(String fileName) {
 		int[][] board = read(fileName);
-		//// Write here code that tests that the count and cellValue functions
-		//// are working properly, and returning the correct values.
+		int[][] newBoard = new int[board.length][board[0].length];
+		for (int i = 1; i < board.length - 1; i++) {
+			for (int j = 1; j < board[0].length - 1; j++) {
+				newBoard[i][j] = cellValue(board, i, j);
+			}
+		}
+		print(newBoard);
+
 	}
 
 	// Reads the data file, plays the game for Ngen generations,
@@ -112,8 +118,20 @@ public class GameOfLife {
 	// 1.
 	// Uses the count(board,i,j) function to count the number of alive neighbors.
 	public static int cellValue(int[][] board, int i, int j) {
-		//// Replace the following statement with your code.
-		return 0;
+		int countAlive = count(board, i, j);
+		if (board[i][j] == 1 && countAlive <= 2) {
+			return 0;
+		} else if (board[i][j] == 1 && (countAlive == 3 || countAlive == 4)) {
+			return 1;
+		} else if (board[i][j] == 1 && countAlive > 4) {
+			return 0;
+		} else if (board[i][j] == 0 && countAlive == 3) {
+			return 1;
+
+		} else {
+			return 0;
+		}
+
 	}
 
 	// Counts and returns the number of living neighbors of the given cell
@@ -122,8 +140,15 @@ public class GameOfLife {
 	// Assumes that j is at least 1 and at most the number of columns in the board -
 	// 1.
 	public static int count(int[][] board, int i, int j) {
-		//// Replace the following statement with your code.
-		return 0;
+		int countAlive = 0;
+		for (int a = 0; a < 3; a++) {
+			for (int b = 0; b < 3; b++) {
+				if (board[i - 1 + a][j - 1 + b] == 1) {
+					countAlive = countAlive + 1;
+				}
+			}
+		}
+		return countAlive;
 	}
 
 	// Prints the board. Alive and dead cells are printed as 1 and 0, respectively.
